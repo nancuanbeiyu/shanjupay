@@ -1,0 +1,5 @@
+# 项目排除路径
+/shanjupay-common/target/
+/shanjupay-merchant/shanjupay-merchant-api/target/
+/shanjupay-merchant/shanjupay-merchant-service/target/
+/shanjupay-merchant-application/target/

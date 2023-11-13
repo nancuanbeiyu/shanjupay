@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/shanjupay.iml" filepath="$PROJECT_DIR$/.idea/shanjupay.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shanjupay-common/shanjupay-common.iml" filepath="$PROJECT_DIR$/shanjupay-common/shanjupay-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shanjupay-merchant/shanjupay-merchant.iml" filepath="$PROJECT_DIR$/shanjupay-merchant/shanjupay-merchant.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shanjupay-merchant/shanjupay-merchant-api/shanjupay-merchant-api.iml" filepath="$PROJECT_DIR$/shanjupay-merchant/shanjupay-merchant-api/shanjupay-merchant-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shanjupay-merchant-application/shanjupay-merchant-application.iml" filepath="$PROJECT_DIR$/shanjupay-merchant-application/shanjupay-merchant-application.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shanjupay-merchant/shanjupay-merchant-service/shanjupay-merchant-service.iml" filepath="$PROJECT_DIR$/shanjupay-merchant/shanjupay-merchant-service/shanjupay-merchant-service.iml" />
+    </modules>
+  </component>
+</project>
