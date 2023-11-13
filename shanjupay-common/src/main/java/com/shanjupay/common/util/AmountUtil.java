@@ -44,10 +44,16 @@ public class AmountUtil {
             result.reverse().append(".").append(amString.substring(amString.length()-2));
         }
         if(flag == 1){
+
             return "-"+result.toString();
         }else{
             return result.toString();
         }
+    }
+
+    public static void main(String[] args) throws Exception {
+
+        System.out.println(AmountUtil.changeF2Y((long) 1));
     }
 
     /**
