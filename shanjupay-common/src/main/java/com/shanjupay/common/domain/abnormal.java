@@ -11,5 +11,7 @@ public class abnormal  extends RuntimeException{
         this.errorCode = errorCode;
     }
 
-
+    public abnormal( ) {
+        super();
+     }
 }

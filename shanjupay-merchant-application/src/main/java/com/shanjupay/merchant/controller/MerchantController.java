@@ -1,5 +1,6 @@
 package com.shanjupay.merchant.controller;
 
+import com.shanjupay.common.domain.abnormal;
 import com.shanjupay.merchant.api.MerchantService;
 import com.shanjupay.merchant.api.dto.Merchant;
 import com.shanjupay.merchant.api.dto.MerchantDTO;
@@ -47,7 +48,7 @@ public class MerchantController {
     //注册
     @ApiOperation("注册")
     @PostMapping(value = "/merchants/register")
-    public com.shanjupay.merchant.api.dto.Merchant ApplyFor(@RequestBody MerchantRegisterVo Merchant) throws Exception {
+    public com.shanjupay.merchant.api.dto.Merchant ApplyFor(@RequestBody MerchantRegisterVo Merchant) throws abnormal  {
         com.shanjupay.merchant.api.dto.Merchant merchant = merchantService.loginMerchantDTO(Merchant);
         return merchant;
     }
@@ -56,7 +57,7 @@ public class MerchantController {
     @ApiOperation("测试，后期加入登录验证验证码")
     //@ApiImplicitParam(name = "name", value = "姓名", required = true, dataType = "string")
     @PostMapping(value = "/verify")
-    public boolean verify(String photo,String code) throws Exception {
+    public boolean verify(String photo,String code) throws abnormal {
         boolean b= merchantService.verify(photo,code);
         return b;
     }

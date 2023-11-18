@@ -2,9 +2,11 @@ package com.shanjupay.merchant.service;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.shanjupay.common.domain.CommonErrorCode;
+import com.shanjupay.common.domain.abnormal;
 import com.shanjupay.merchant.api.MerchantService;
 import com.shanjupay.merchant.api.dto.MerchantDTO;
 import com.shanjupay.merchant.api.dto.MerchantRegisterVo;
+import com.shanjupay.merchant.config.QiniuUtils;
 import com.shanjupay.merchant.entity.Merchant;
 import com.shanjupay.merchant.mapper.MerchantMapper;
 
@@ -17,6 +19,10 @@ import org.springframework.data.redis.core.StringRedisTemplate;
 
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import static com.shanjupay.common.domain.CommonErrorCode.*;
 
 /**
  * Created by Administrator.
@@ -44,13 +50,27 @@ public class MerchantServiceImpl implements MerchantService {
 
 
     @Override
-    public com.shanjupay.merchant.api.dto.Merchant loginMerchantDTO(MerchantRegisterVo dto) throws Exception {
+    public com.shanjupay.merchant.api.dto.Merchant loginMerchantDTO(MerchantRegisterVo dto) throws abnormal {
 
         QueryWrapper<Merchant> queryWrapper = new QueryWrapper<>();
         queryWrapper.eq("mobile", dto.getMobile());
         if (merchantMapper.selectOne(queryWrapper) != null) {
 
-            throw new Exception(" ");        }
+            throw new abnormal(CommonErrorCode.E_200203);
+        }
+        //手机号格式校验
+        String mobileRegEx = "^1[3,4,5,6,7,8,9][0-9]{9}$";//正则表达式
+
+        Pattern pattern = Pattern.compile(mobileRegEx);//函数语法 匹配的正则表达式
+        Matcher matcher = pattern.matcher(dto.getMobile());//进行匹配
+
+        if (!matcher.matches()) {//校验手机号格式是否正确，若是匹配成功则返回true
+
+            throw new abnormal(CommonErrorCode.E_200224);
+        }
+
+
+
         //验证码验证
         verify(dto.getMobile(), dto.getVerifiyCode());
 
@@ -121,19 +141,25 @@ public class MerchantServiceImpl implements MerchantService {
     }
 
 
+
     //校验验证码
     @Override
-    public boolean verify(String phone, String code) throws Exception {
+    public boolean verify(String phone, String code) throws abnormal {
         String s = redis.opsForValue().get(key + phone);
         if (s == null) {
 
-            throw new Exception("手机:" + phone + "没有发送过验证码");
+            throw new abnormal(CommonErrorCode.E_200238);
         }
         if (!code.toString().equals(s.toString())) {
 
-            throw new Exception("验证码错误");
+            throw new abnormal( CommonErrorCode.E_200237);
         }
         return true;
+    }
+
+
+    public void UPLOAD(String fileName){
+         new QiniuUtils().testUpload(fileName);
     }
 
 
