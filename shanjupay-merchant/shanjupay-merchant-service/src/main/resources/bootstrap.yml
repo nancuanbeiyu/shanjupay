@@ -65,3 +65,8 @@ logging:
 ApplyFor:
   key: "code:"
   LoseKey: "LoseCode:"
+  qiniuyun:
+    url: "https://s43af3wjg.hn-bkt.clouddn.com/"
+    accessKey: "Ght14dk331tcL2AKjl2O6YoxJkdV5BBMyMW5_UEu"
+    secretKey: "LrtFVeISkV2RR6UYJfLZzqCHvjy3hj6YI6FX1Q1A"
+    bucket: "yayitietie"

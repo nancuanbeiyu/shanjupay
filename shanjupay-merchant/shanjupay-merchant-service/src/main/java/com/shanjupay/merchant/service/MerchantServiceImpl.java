@@ -6,8 +6,7 @@ import com.shanjupay.common.domain.abnormal;
 import com.shanjupay.merchant.api.MerchantService;
 import com.shanjupay.merchant.api.dto.MerchantDTO;
 import com.shanjupay.merchant.api.dto.MerchantRegisterVo;
-import com.shanjupay.merchant.config.QiniuUtils;
-import com.shanjupay.merchant.entity.Merchant;
+ import com.shanjupay.merchant.entity.Merchant;
 import com.shanjupay.merchant.mapper.MerchantMapper;
 
 import org.redisson.Redisson;
@@ -158,9 +157,7 @@ public class MerchantServiceImpl implements MerchantService {
     }
 
 
-    public void UPLOAD(String fileName){
-         new QiniuUtils().testUpload(fileName);
-    }
+
 
 
 }

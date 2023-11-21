@@ -28,7 +28,7 @@
       <module name="shanjupay" options="" />
       <module name="shanjupay-common" options="-parameters -bootclasspath $PROJECT_DIR$/../../Java1.8/Java1.8/jdk1.8/jre/lib/rt.jar;$PROJECT_DIR$/../../Java1.8/Java1.8/jdk1.8/jre/lib/jce.jar" />
       <module name="shanjupay-gateway-service" options="-parameters" />
-      <module name="shanjupay-merchant" options="-parameters" />
+      <module name="shanjupay-merchant" options="" />
       <module name="shanjupay-merchant-api" options="-parameters" />
       <module name="shanjupay-merchant-application" options="-parameters" />
       <module name="shanjupay-merchant-service" options="-parameters" />
