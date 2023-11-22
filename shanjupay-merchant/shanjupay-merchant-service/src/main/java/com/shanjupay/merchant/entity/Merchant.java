@@ -29,7 +29,7 @@ public class Merchant implements Serializable {
      * 企业编号
      */
     @TableField("MERCHANT_NO")
-    private Long merchantNo;
+    private String merchantNo;
 
     /**
      * 企业地址

@@ -1,12 +1,13 @@
 package com.shanjupay.merchant.controller;
 
 import com.shanjupay.common.domain.abnormal;
+import com.shanjupay.common.util.SecurityUtil;
 import com.shanjupay.merchant.api.MerchantService;
-import com.shanjupay.merchant.api.dto.Merchant;
 import com.shanjupay.merchant.api.dto.MerchantDTO;
 import com.shanjupay.merchant.api.dto.MerchantRegisterVo;
 import com.shanjupay.merchant.config.fileQiNiuYunlmpl;
-import io.swagger.annotations.Api;
+import com.shanjupay.common.vo.MerchantDetailVO;
+ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
@@ -14,7 +15,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
-import javax.annotation.Resource;
 import java.io.IOException;
 import java.util.UUID;
 
@@ -85,4 +85,11 @@ public class MerchantController {
     }
 
 
+    //企业资质申请接口
+    @ApiOperation("资质申请")
+    @PostMapping(value = "/my/merchants/save")
+    public void application(  @RequestBody MerchantDetailVO merchantDTO){
+        Long merchantId = SecurityUtil.getMerchantId();
+        merchantService.application(merchantId,merchantDTO);
+    }
 }

@@ -9,6 +9,7 @@ import com.shanjupay.merchant.api.dto.MerchantRegisterVo;
  import com.shanjupay.merchant.entity.Merchant;
 import com.shanjupay.merchant.mapper.MerchantMapper;
 
+import com.shanjupay.common.vo.MerchantDetailVO;
 import org.redisson.Redisson;
 import org.redisson.api.RedissonClient;
 import org.redisson.config.Config;
@@ -20,8 +21,6 @@ import java.util.Random;
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
-import static com.shanjupay.common.domain.CommonErrorCode.*;
 
 /**
  * Created by Administrator.
@@ -156,8 +155,28 @@ public class MerchantServiceImpl implements MerchantService {
         return true;
     }
 
+    @Override
+    public void application(long id, MerchantDetailVO merchantDTO) {
+        QueryWrapper<Merchant> queryWrapper=new QueryWrapper();
+        queryWrapper.eq("id",id);
+        Merchant merchant = merchantMapper.selectOne(queryWrapper);
+        if(merchant==null){
+            throw new abnormal( CommonErrorCode.E_200227);
+        }
+        merchant.setMerchantName(merchantDTO.getMerchantName());
+        merchant.setMerchantNo(merchantDTO.getMerchantNo());
+        merchant.setMerchantAddress(merchantDTO.getMerchantAddress());
+        merchant.setMerchantType(merchantDTO.getMerchantType());
+        merchant.setBusinessLicensesImg(merchantDTO.getBusinessLicensesImg());
+        merchant.setIdCardFrontImg(merchantDTO.getIdCardFrontImg());
+        merchant.setIdCardAfterImg(merchantDTO.getIdCardAfterImg());
+        merchant.setUsername(merchantDTO.getUsername());
+        merchant.setContactsAddress(merchantDTO.getContactsAddress());
+        //merchant.setTenantId(merchantDTO.getTenantId());
+        merchant.setAuditStatus("1");
 
-
+        merchantMapper.updateById(merchant);
+    }
 
 
 }
