@@ -8,6 +8,9 @@
       <module fileurl="file://$PROJECT_DIR$/shanjupay-merchant/shanjupay-merchant-api/shanjupay-merchant-api.iml" filepath="$PROJECT_DIR$/shanjupay-merchant/shanjupay-merchant-api/shanjupay-merchant-api.iml" />
       <module fileurl="file://$PROJECT_DIR$/shanjupay-merchant-application/shanjupay-merchant-application.iml" filepath="$PROJECT_DIR$/shanjupay-merchant-application/shanjupay-merchant-application.iml" />
       <module fileurl="file://$PROJECT_DIR$/shanjupay-merchant/shanjupay-merchant-service/shanjupay-merchant-service.iml" filepath="$PROJECT_DIR$/shanjupay-merchant/shanjupay-merchant-service/shanjupay-merchant-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shanjupay-transaction/shanjupay-transaction.iml" filepath="$PROJECT_DIR$/shanjupay-transaction/shanjupay-transaction.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shanjupay-transaction/shanjupay-transaction-api/shanjupay-transaction-api.iml" filepath="$PROJECT_DIR$/shanjupay-transaction/shanjupay-transaction-api/shanjupay-transaction-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shanjupay-transaction/shanjupay-transaction-service/shanjupay-transaction-service.iml" filepath="$PROJECT_DIR$/shanjupay-transaction/shanjupay-transaction-service/shanjupay-transaction-service.iml" />
     </modules>
   </component>
 </project>

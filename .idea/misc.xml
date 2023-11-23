@@ -14,6 +14,9 @@
         <option value="$PROJECT_DIR$/shanjupay-merchant/pom.xml" />
         <option value="$PROJECT_DIR$/shanjupay-merchant/shanjupay-merchant-api/pom.xml" />
         <option value="$PROJECT_DIR$/shanjupay-merchant/shanjupay-merchant-service/pom.xml" />
+        <option value="$PROJECT_DIR$/shanjupay-transaction/pom.xml" />
+        <option value="$PROJECT_DIR$/shanjupay-transaction/shanjupay-transaction-api/pom.xml" />
+        <option value="$PROJECT_DIR$/shanjupay-transaction/shanjupay-transaction-service/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
