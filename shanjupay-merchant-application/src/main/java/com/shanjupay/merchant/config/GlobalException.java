@@ -13,15 +13,14 @@ import javax.servlet.http.HttpServletResponse;
 import static com.shanjupay.common.domain.CommonErrorCode.UNKOWN;
 
 //全局异常
-@ControllerAdvice
-
+//@ControllerAdvice
 public class GlobalException {
 
 
     //捕获异常
-    @ResponseBody
-    @ExceptionHandler(value = Exception.class)
-    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
+//    @ResponseBody
+//    @ExceptionHandler(value = Exception.class)
+//    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     public RestErrorResponse RestErrorResponse(HttpServletRequest request, HttpServletResponse
             response, Exception e){
         RestErrorResponse restErrorResponse=null;
