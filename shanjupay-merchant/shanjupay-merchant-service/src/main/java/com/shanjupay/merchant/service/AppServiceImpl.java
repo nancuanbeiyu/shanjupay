@@ -36,12 +36,11 @@ public class AppServiceImpl implements AppService {
             throw new abnormal( CommonErrorCode.E_200240);
         }
         //查看是否通过审核
-
         Merchant merchant = merchantMapper.selectById(merchantId);
         if(merchant==null){
             throw new abnormal( CommonErrorCode.E_200241);
         }
-        if(!merchant.getAuditStatus().equals("2") ){
+        if(!merchant.getAuditStatus().equals("3") ){
             throw new abnormal( CommonErrorCode.E_200236);
         }
         //查询用户名称唯一
@@ -50,7 +49,6 @@ public class AppServiceImpl implements AppService {
         App selectOne = appMapper.selectOne(appQueryWrapper);
         if(selectOne!=null){
             throw new abnormal( CommonErrorCode.E_200242);
-
         }
         appvo.setAppId(UUID.randomUUID()+"");
         appvo.setAppName(app.getAppName());
