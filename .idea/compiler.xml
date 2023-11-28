@@ -9,9 +9,14 @@
         <module name="shanjupay-merchant-api" />
         <module name="shanjupay-merchant-service" />
         <module name="shanjupay-transaction-api" />
-        <module name="shanjupay-merchant-application" />
+        <module name="shanjupay-user-api" />
         <module name="shanjupay-common" />
+        <module name="shanjupay-gateway-service" />
+        <module name="shanjupay-user-service" />
+        <module name="shanjupay-merchant-application" />
+        <module name="shanjupay-uaa-api" />
         <module name="shanjupay-transaction-service" />
+        <module name="shanjupay-uaa-service" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -26,6 +31,12 @@
       <module name="shanjupay-transaction" target="1.8" />
       <module name="shanjupay-transaction-api" target="1.8" />
       <module name="shanjupay-transaction-service" target="1.8" />
+      <module name="shanjupay-uaa" target="1.8" />
+      <module name="shanjupay-uaa-api" target="1.8" />
+      <module name="shanjupay-uaa-service" target="1.8" />
+      <module name="shanjupay-user" target="1.8" />
+      <module name="shanjupay-user-api" target="1.8" />
+      <module name="shanjupay-user-service" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -39,6 +50,10 @@
       <module name="shanjupay-merchant-service" options="-parameters" />
       <module name="shanjupay-transaction-api" options="-parameters -bootclasspath $PROJECT_DIR$/../../Java1.8/Java1.8/jdk1.8/jre/lib/rt.jar;$PROJECT_DIR$/../../Java1.8/Java1.8/jdk1.8/jre/lib/jce.jar" />
       <module name="shanjupay-transaction-service" options="-parameters" />
+      <module name="shanjupay-uaa-api" options="-parameters -bootclasspath $PROJECT_DIR$/../../Java1.8/Java1.8/jdk1.8/jre/lib/rt.jar;$PROJECT_DIR$/../../Java1.8/Java1.8/jdk1.8/jre/lib/jce.jar" />
+      <module name="shanjupay-uaa-service" options="-parameters" />
+      <module name="shanjupay-user-api" options="-parameters -bootclasspath $PROJECT_DIR$/../../Java1.8/Java1.8/jdk1.8/jre/lib/rt.jar;$PROJECT_DIR$/../../Java1.8/Java1.8/jdk1.8/jre/lib/jce.jar" />
+      <module name="shanjupay-user-service" options="-parameters" />
     </option>
   </component>
 </project>

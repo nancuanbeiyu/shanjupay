@@ -8,7 +8,7 @@ import javax.annotation.Generated;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2023-11-23T16:56:41+0800",
+    date = "2023-11-27T10:48:10+0800",
     comments = "version: 1.3.0.Final, compiler: javac, environment: Java 1.8.0_152 (Oracle Corporation)"
 )
 public class PlatformChannelConvertImpl implements PlatformChannelConvert {

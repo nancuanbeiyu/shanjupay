@@ -33,4 +33,22 @@ public interface PayChannelService {
      */
     void savePayChannelParam(PayChannelParamDTO payChannelParam) ;
 
-}
+    /**
+     * 获取指定应用指定服务类型下所包含的原始支付渠道参数列表
+     * @param appId 应用id
+     * @param platformChannel 服务类型
+     * @return
+     */
+    List<PayChannelParamDTO> queryPayChannelParamByAppAndPlatform(String appId, String
+            platformChannel);
+
+    /**
+     * 获取指定应用指定服务类型下所包含的某个原始支付参数
+     * @param appId
+     * @param platformChannel
+     * @param payChannel
+     * @return
+     *
+     */
+    PayChannelParamDTO queryParamByAppPlatformAndPayChannel(String appId, String platformChannel, String payChannel);
+ }
